@@ -1,0 +1,11 @@
+<h1>Inspection Results:</h1>
+<% @inspections.each do |inspection| %>
+  <p>Restaurant Name: <%= inspection["dba"].titleize %></p>
+  <p>Address: <%= inspection["building"] %> <%= inspection["street"] %>
+  <% if inspection["grade"] %>
+    <p>Grade: <%= inspection["grade"] %></p>
+  <% else %>
+    <p>Grade: Not Available</p>
+  <% end %>
+  <p>Violation: <%= inspection["violation_description"] %></p>
+<% end %>
